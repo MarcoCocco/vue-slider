@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Slider</title>
 
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
@@ -32,24 +32,12 @@
 
                 <div class="thumbs">
 
-                    <div @click = "prevArrow()" class="prev"></div>
-                    <div @click = 'nextArrow()' class="next"></div>
+                    <div @click="prevArrow()" class="prev"></div>
+                    <div @click='nextArrow()' class="next"></div>
 
-                    <div class="thumb active">
-                        <img src="img/01.webp" alt="Svezia" />
-                    </div>
-                    <div class="thumb">
-                        <img src="img/02.webp" alt="Ratchet & Clank" />
-                    </div>
-                    <div class="thumb">
-                        <img src="img/03.webp" alt="Fortnite" />
-                    </div>
-                    <div class="thumb">
-                        <img src="img/04.webp" alt="Stray" />
-                    </div>
-                    <div class="thumb">
-                        <img src="img/05.webp" alt="Avengers" />
-                    </div>
+                    <img v-for="(slide, index) in slides" class="thumb" :class="index === activeIndex ? 'active' : ''"
+                        :src="slide.image" alt="">
+
                 </div>
 
             </div>
@@ -57,7 +45,7 @@
 
     </div>
 
-    <script src="./js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
