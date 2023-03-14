@@ -70,9 +70,19 @@ createApp({
             } else {
 
                 this.activeIndex--;
-                
+
             }
         },
-    },
+
+        selectImage(index) {
+
+            this.activeIndex = index;
+
+        },
+
+
+    }
+
+
 
 }).mount('#app')

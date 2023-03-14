@@ -35,11 +35,10 @@
                     <div @click="prevArrow()" class="prev"></div>
                     <div @click='nextArrow()' class="next"></div>
 
-                    <img v-for="(slide, index) in slides" class="thumb" :class="index === activeIndex ? 'active' : ''"
+                    <img v-for="(slide, index) in slides" class="thumb" @click="selectImage(index)" :class="index === activeIndex ? 'active' : ''"
                         :src="slide.image" alt="">
 
                 </div>
-
             </div>
         </div>
 
