@@ -42,6 +42,7 @@ createApp({
             ],
 
             activeIndex: 0,
+            intervalID: null,
 
         }
     },
@@ -80,9 +81,22 @@ createApp({
 
         },
 
+        startAutoplay() {
+
+            this.intervalID = setInterval(() => {
+
+                this.nextArrow();
+
+            }, 3000);
+
+        },
+
+        stopAutoplay() {
+
+            clearInterval(this.intervalID);
+            
+        },
 
     }
-
-
 
 }).mount('#app')
