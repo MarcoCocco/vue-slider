@@ -47,6 +47,16 @@ createApp({
         }
     },
 
+    mounted() {
+
+        this.intervalID = setInterval(() => {
+
+            this.nextArrow();
+
+        }, 3000);
+        
+    },
+
     methods: {
 
         nextArrow() {
@@ -64,9 +74,9 @@ createApp({
 
         prevArrow() {
 
-            if (this.activeIndex === 0) {
+            if (this.activeIndex <= 0) {
 
-                this.activeIndex = 4;
+                this.activeIndex = this.slides.length - 1;
 
             } else {
 
@@ -94,9 +104,10 @@ createApp({
         stopAutoplay() {
 
             clearInterval(this.intervalID);
-            
+
         },
 
     }
+
 
 }).mount('#app')
